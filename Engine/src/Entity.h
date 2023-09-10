@@ -1,0 +1,55 @@
+#ifndef Entity_H
+#define Entity_H
+
+#include "pch.h"
+#include "Rendering/Vertex.h"
+
+namespace Engine
+{
+	class Entity
+	{
+	public:
+
+		struct Position
+		{
+			float x = 0.0f;
+			float y = 0.0f;
+			float z = 0.0f;
+		};
+
+		struct Rotation
+		{
+			float x = 0.0f;
+			float y = 0.0f;
+			float z = 1.0f;
+		};
+
+		struct Scale
+		{
+			float x = 1.0f;
+			float y = 1.0f;
+			float z = 1.0f;
+		};
+
+		struct Transform
+		{
+			Position position;
+			Rotation rotation;
+			Scale scale;
+		};
+
+		Entity();
+		~Entity();
+
+		Transform transform;
+		std::vector<Vertex> verticies;
+		std::vector<unsigned int> indices;
+
+		virtual void update();
+
+	private:
+
+	};
+}
+
+#endif // !Entity_H

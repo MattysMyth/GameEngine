@@ -8,9 +8,16 @@
 #define PCH_H
 
 // add headers that you want to pre-compile here
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
+#include <iostream>
+#include <map>
+#include <set>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
 #endif //PCH_H
