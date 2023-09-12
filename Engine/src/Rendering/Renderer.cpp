@@ -105,7 +105,9 @@ void Engine::Renderer::render(std::set<Entity*>* entities)
         glm::vec3 scaleVector = glm::vec3(entity->transform.scale.x, entity->transform.scale.y, entity->transform.scale.z);
 
         modelMatrix = glm::translate(modelMatrix, transformVector);
-        modelMatrix = glm::rotate(modelMatrix, 0.0f, rotateVector); // Rotation needs to be updated to take in angle data
+        modelMatrix = glm::rotate(modelMatrix, glm::radians(entity->transform.rotation.x), glm::vec3(1.0f, 0, 0)); // Rotate around the x-axis
+        modelMatrix = glm::rotate(modelMatrix, glm::radians(entity->transform.rotation.y), glm::vec3(0, 1.0f, 0)); // Rotate around the y-axis
+        modelMatrix = glm::rotate(modelMatrix, glm::radians(entity->transform.rotation.z), glm::vec3(0, 0, 1.0f)); // Rotate around the z-axis
         modelMatrix = glm::scale(modelMatrix, scaleVector);
 
         // Set Model View Projection matrix on the CPU
