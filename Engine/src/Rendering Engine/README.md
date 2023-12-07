@@ -1,6 +1,7 @@
 # Rendering Engine
 The Rendering Engine is designed to host all the Graphics API agnostic calls to manage rendering
-images to the monitor.
+images to the monitor. Currently the Renderer is built to accept OpenGL as the sole Graphics API,
+however this will be updated to reflect other APIs in future updates.
 
 ## Structure
 ### Update function
